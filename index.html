@@ -14,20 +14,20 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Space Mono', monospace; min-height: 100vh; overflow-x: hidden; }
-
+ 
   header { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
   .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.03em; }
   .logo span { color: var(--accent); }
   nav { display: flex; gap: 0.5rem; }
   .tab-btn { background: none; border: 1px solid var(--border); color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.75rem; padding: 0.45rem 1rem; border-radius: 999px; cursor: pointer; transition: all 0.2s; }
   .tab-btn.active, .tab-btn:hover { border-color: var(--accent); color: var(--text); background: rgba(124,106,247,0.1); }
-
+ 
   /* ── SCREENS ── */
   .screen { display: none; padding: 2rem; max-width: 1100px; margin: 0 auto; }
   .screen.active { display: block; }
   h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
   .subtitle { color: var(--muted); font-size: 0.8rem; margin-bottom: 1.5rem; }
-
+ 
   /* ── START SCREEN ── */
   .start-card {
     background: var(--surface);
@@ -46,13 +46,13 @@
   .start-input-group input:focus { border-color: var(--accent); }
   .start-input-group input.error { border-color: var(--danger); }
   .start-error { color: var(--danger); font-size: 0.75rem; margin-top: -0.3rem; display: none; }
-
+ 
   .vocab-preview { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 1.5rem; text-align: left; max-height: 220px; overflow-y: auto; }
   .vocab-preview-title { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 0.6rem; }
   .vocab-pair { font-size: 0.75rem; color: var(--muted); padding: 0.25rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 0.5rem; }
   .vocab-pair:last-child { border-bottom: none; }
   .vocab-pair .vp-a { color: var(--text); min-width: 45%; }
-
+ 
   /* ── BUTTONS ── */
   .btn { background: var(--accent); border: none; border-radius: 8px; color: #fff; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.9rem; padding: 0.6rem 1.6rem; cursor: pointer; transition: opacity 0.2s, transform 0.1s; }
   .btn:hover { opacity: 0.85; }
@@ -60,14 +60,14 @@
   .btn.secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
   .btn.danger { background: var(--danger); }
   .btn-full { width: 100%; padding: 0.8rem; font-size: 1rem; }
-
+ 
   /* ── GAME SCREEN ── */
   .game-header { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
   .stat-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.75rem; color: var(--muted); }
   .stat-pill strong { color: var(--text); }
-
+ 
   #memory-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; }
-
+ 
   .memory-card { aspect-ratio: 5/3; cursor: pointer; position: relative; transform-style: preserve-3d; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); border-radius: 10px; }
   .memory-card.flipped { transform: rotateY(180deg); }
   .memory-card.matched { pointer-events: none; }
@@ -76,10 +76,10 @@
   .memory-card:hover .card-back { background: var(--surface2); border-color: var(--accent); }
   .card-front { background: var(--card-front); border: 1px solid var(--accent); transform: rotateY(180deg); color: var(--text); font-size: 0.68rem; word-break: break-word; }
   .memory-card.matched .card-front { background: rgba(77,217,138,0.15); border-color: var(--success); }
-
+ 
   .progress-bar { height: 3px; background: var(--surface2); border-radius: 999px; overflow: hidden; margin-bottom: 1rem; }
   .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 999px; transition: width 0.4s ease; }
-
+ 
   /* ── WIN OVERLAY ── */
   #win-overlay { display: none; position: fixed; inset: 0; background: rgba(14,14,18,0.92); z-index: 200; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; }
   #win-overlay.show { display: flex; animation: fadeIn 0.4s ease; }
@@ -89,7 +89,7 @@
   .win-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; margin-bottom: 0.4rem; }
   .win-stats { color: var(--muted); font-size: 0.8rem; margin: 0.8rem 0 1.5rem; line-height: 2; }
   .win-score { font-size: 2.5rem; font-family: 'Syne', sans-serif; font-weight: 800; color: var(--accent); display: block; margin-bottom: 0.3rem; }
-
+ 
   /* ── LEADERBOARD ── */
   .lb-entry { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.5rem; transition: border-color 0.2s; }
   .lb-entry:hover { border-color: var(--accent); }
@@ -113,7 +113,7 @@
   select { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'Space Mono', monospace; font-size: 0.8rem; padding: 0.5rem 0.8rem; outline: none; cursor: pointer; }
   input[type="text"] { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'Space Mono', monospace; font-size: 0.85rem; padding: 0.5rem 0.8rem; outline: none; transition: border-color 0.2s; }
   input[type="text"]:focus { border-color: var(--accent); }
-
+ 
   @media (max-width: 700px) {
     #memory-grid { grid-template-columns: repeat(4, 1fr); }
     header { padding: 1rem; }
@@ -122,7 +122,7 @@
 </style>
 </head>
 <body>
-
+ 
 <header>
   <div class="logo">Vokabel<span>Memory</span></div>
   <nav>
@@ -130,29 +130,29 @@
     <button class="tab-btn" onclick="showScreen('leaderboard')" id="tab-leaderboard">Bestenliste</button>
   </nav>
 </header>
-
+ 
 <!-- ══ SCREEN: START / NAME EINGABE ══ -->
 <section class="screen active" id="screen-start">
   <div class="start-card">
     <div style="font-size:2.5rem;margin-bottom:0.5rem">🃏</div>
     <h2>Cuisine française</h2>
     <p class="subtitle">16 Vokabelpaare · Französisch–Deutsch</p>
-
+ 
     <div class="vocab-preview">
       <div class="vocab-preview-title">VOKABELN IN DIESEM SET</div>
       <div id="vocab-list-preview"></div>
     </div>
-
+ 
     <div class="start-input-group">
       <label>DEIN NAME</label>
       <input type="text" id="player-name-start" placeholder="Name eingeben…" maxlength="20" oninput="clearNameError()">
       <span class="start-error" id="name-error">Bitte gib einen Namen ein.</span>
     </div>
-
+ 
     <button class="btn btn-full" onclick="startGame()">▶ Spiel starten</button>
   </div>
 </section>
-
+ 
 <!-- ══ SCREEN: SPIEL ══ -->
 <section class="screen" id="screen-game">
   <div class="game-header">
@@ -166,12 +166,12 @@
   <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
   <div id="memory-grid"></div>
 </section>
-
+ 
 <!-- ══ SCREEN: BESTENLISTE ══ -->
 <section class="screen" id="screen-leaderboard">
   <h2>Bestenliste</h2>
   <p class="subtitle">Die besten Ergebnisse aller Spieler.</p>
-
+ 
   <div class="setup-info" id="lb-setup-info">
     <strong>🌍 Globale Bestenliste einrichten</strong><br>
     Einmalig auf <a href="https://jsonbin.io" target="_blank" style="color:var(--accent)">jsonbin.io</a> registrieren, neuen Bin mit <code>[]</code> anlegen, dann Bin-ID und API-Key hier eintragen:
@@ -181,7 +181,7 @@
       <button class="btn" style="font-size:0.75rem;padding:0.4rem 1rem" onclick="saveJBConfig()">Speichern</button>
     </div>
   </div>
-
+ 
   <div class="lb-tabs">
     <button class="lb-tab active" onclick="switchLbTab('global')" id="lbt-global">🌍 Global</button>
     <button class="lb-tab" onclick="switchLbTab('local')" id="lbt-local">💾 Lokal</button>
@@ -192,7 +192,7 @@
   </div>
   <div id="lb-list"></div>
 </section>
-
+ 
 <!-- ══ WIN OVERLAY ══ -->
 <div id="win-overlay">
   <div class="win-box">
@@ -205,7 +205,7 @@
     </div>
   </div>
 </div>
-
+ 
 <script>
 // ════════════════════════════════
 // FESTE VOKABELLISTE
@@ -228,15 +228,15 @@ const VOCAB_PAIRS = [
   { a: "l'industrie (f) agroalimentaire", b: 'Lebensmittelindustrie' },
   { a: 'la recette',                      b: 'das Rezept' },
 ];
-
+ 
 const SET_NAME = 'Cuisine française';
-
+ 
 // ════════════════════════════════
 // STATE
 // ════════════════════════════════
 let cards=[], flipped=[], matched=0, moves=0, locked=false, timer=null, seconds=0, currentPlayer='';
 let lbMode = 'global';
-
+ 
 // ════════════════════════════════
 // ON LOAD
 // ════════════════════════════════
@@ -250,7 +250,7 @@ window.addEventListener('load', () => {
   const last = localStorage.getItem('vm_lastname');
   if (last) document.getElementById('player-name-start').value = last;
 });
-
+ 
 // ════════════════════════════════
 // NAV
 // ════════════════════════════════
@@ -261,7 +261,7 @@ function showScreen(name) {
   if (name === 'start' || name === 'game') document.getElementById('tab-start').classList.add('active');
   if (name === 'leaderboard') { document.getElementById('tab-leaderboard').classList.add('active'); initLeaderboard(); }
 }
-
+ 
 // ════════════════════════════════
 // START / NAME VALIDATION
 // ════════════════════════════════
@@ -269,7 +269,7 @@ function clearNameError() {
   document.getElementById('player-name-start').classList.remove('error');
   document.getElementById('name-error').style.display = 'none';
 }
-
+ 
 function startGame() {
   const nameInput = document.getElementById('player-name-start');
   const name = nameInput.value.trim();
@@ -284,26 +284,26 @@ function startGame() {
   buildGrid();
   showScreen('game');
 }
-
+ 
 function restartGame() {
   buildGrid();
   showScreen('game');
 }
-
+ 
 // ════════════════════════════════
 // BUILD GRID (immer alle 16 Paare)
 // ════════════════════════════════
 function buildGrid() {
   clearInterval(timer);
   seconds=0; moves=0; matched=0; flipped=[]; locked=false;
-
+ 
   cards = [];
   VOCAB_PAIRS.forEach((pair, i) => {
     cards.push({ id: i, text: pair.a, type: 'A' });
     cards.push({ id: i, text: pair.b, type: 'B' });
   });
   cards = shuffle(cards);
-
+ 
   const grid = document.getElementById('memory-grid');
   grid.innerHTML = '';
   cards.forEach((card, idx) => {
@@ -314,28 +314,28 @@ function buildGrid() {
     el.addEventListener('click', () => flipCard(idx));
     grid.appendChild(el);
   });
-
+ 
   document.getElementById('stat-player').textContent = currentPlayer;
   document.getElementById('progress-fill').style.width = '0%';
   updateStats();
-
+ 
   timer = setInterval(() => {
     seconds++;
     const m = Math.floor(seconds/60), s = String(seconds%60).padStart(2,'0');
     document.getElementById('stat-time').textContent = `${m}:${s}`;
   }, 1000);
 }
-
+ 
 function shuffle(arr) {
   const a=[...arr];
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
-
+ 
 function escHtml(t) {
   return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
-
+ 
 // ════════════════════════════════
 // FLIP LOGIC
 // ════════════════════════════════
@@ -347,7 +347,7 @@ function flipCard(idx) {
   flipped.push(idx);
   if (flipped.length === 2) { locked=true; moves++; updateStats(); checkMatch(); }
 }
-
+ 
 function checkMatch() {
   const [i1,i2]=flipped, c1=cards[i1], c2=cards[i2];
   const el1=document.querySelector(`.memory-card[data-idx="${i1}"]`);
@@ -360,20 +360,20 @@ function checkMatch() {
     setTimeout(()=>{ el1.classList.remove('flipped'); el2.classList.remove('flipped'); flipped=[]; locked=false; }, 900);
   }
 }
-
+ 
 function updateStats() {
   document.getElementById('stat-moves').textContent = moves;
   document.getElementById('stat-pairs').textContent = matched;
   document.getElementById('progress-fill').style.width = (matched/VOCAB_PAIRS.length*100)+'%';
 }
-
+ 
 function calcScore(moves, secs) {
   const pairs = VOCAB_PAIRS.length;
   const efficiency = Math.max(0, 1-(moves-pairs)/(pairs*2));
   const timeBonus = Math.max(0, 1-secs/(pairs*15));
   return Math.round((efficiency*700+timeBonus*300)*2);
 }
-
+ 
 // ════════════════════════════════
 // WIN
 // ════════════════════════════════
@@ -386,19 +386,19 @@ function showWin() {
   document.getElementById('win-overlay').classList.add('show');
 }
 function closeWin() { document.getElementById('win-overlay').classList.remove('show'); }
-
+ 
 // ════════════════════════════════
 // SAVE SCORE
 // ════════════════════════════════
 async function saveScore() {
   const score = calcScore(moves, seconds);
   const entry = { name: currentPlayer, score, moves, seconds, set: SET_NAME, date: new Date().toLocaleDateString('de-DE') };
-
+ 
   // lokal
   const local = getLocalLB();
   local.push(entry); local.sort((a,b)=>b.score-a.score);
   localStorage.setItem('vm_leaderboard', JSON.stringify(local.slice(0,100)));
-
+ 
   // global
   if (hasJBConfig()) {
     try {
@@ -408,7 +408,7 @@ async function saveScore() {
     } catch(e) { console.warn('Global save failed', e); }
   }
 }
-
+ 
 // ════════════════════════════════
 // JSONBIN
 // ════════════════════════════════
@@ -434,12 +434,12 @@ async function jbWrite(entries) {
   const r=await fetch(`https://api.jsonbin.io/v3/b/${binId}`,{method:'PUT',headers:{'Content-Type':'application/json','X-Access-Key':apiKey},body:JSON.stringify(entries)});
   if(!r.ok) throw new Error('write '+r.status);
 }
-
+ 
 // ════════════════════════════════
 // LEADERBOARD
 // ════════════════════════════════
 function getLocalLB() { try{return JSON.parse(localStorage.getItem('vm_leaderboard')||'[]');}catch{return[];} }
-
+ 
 function initLeaderboard() {
   const cfg=getJBConfig();
   const info=document.getElementById('lb-setup-info');
@@ -447,19 +447,19 @@ function initLeaderboard() {
   else { info.style.display='block'; document.getElementById('jb-bin-id').value=cfg.binId; document.getElementById('jb-api-key').value=cfg.apiKey; }
   renderLeaderboard();
 }
-
+ 
 function switchLbTab(mode) {
   lbMode=mode;
   document.getElementById('lbt-global').classList.toggle('active', mode==='global');
   document.getElementById('lbt-local').classList.toggle('active', mode==='local');
   renderLeaderboard();
 }
-
+ 
 async function renderLeaderboard() {
   const statusEl=document.getElementById('lb-status');
   const listEl=document.getElementById('lb-list');
   let entries=[];
-
+ 
   if (lbMode==='global') {
     if (!hasJBConfig()) {
       listEl.innerHTML='<div class="lb-empty">Globale Bestenliste noch nicht eingerichtet.<br>Bitte oben Bin-ID und API-Key eingeben.</div>';
@@ -477,9 +477,9 @@ async function renderLeaderboard() {
     entries=getLocalLB();
     statusEl.textContent='💾 Lokal · '+entries.length+' Einträge';
   }
-
+ 
   if (entries.length===0) { listEl.innerHTML='<div class="lb-empty">Noch keine Einträge. Spiele eine Runde!</div>'; return; }
-
+ 
   listEl.innerHTML=entries.map((e,i)=>{
     const rc=i===0?'gold':i===1?'silver':i===2?'bronze':'';
     const rs=i===0?'🥇':i===1?'🥈':i===2?'🥉':`#${i+1}`;
@@ -491,7 +491,7 @@ async function renderLeaderboard() {
     </div>`;
   }).join('');
 }
-
+ 
 async function clearLeaderboard() {
   if (!confirm('Bestenliste wirklich löschen?')) return;
   if (lbMode==='local') { localStorage.removeItem('vm_leaderboard'); }
